@@ -106,7 +106,7 @@ final class GitTests: XCTestCase {
         XCTAssert(names.contains("0.0.1"))
 
         XCTAssertEqual((repository["0.0.1"]?.target as? Commit)?.message, "Initial commit")
-        XCTAssertEqual((repository["master"]?.target as? Commit)?.message, "Initial commit")
+        XCTAssertEqual((repository["main"]?.target as? Commit)?.message, "Initial commit")
         XCTAssertEqual((repository["HEAD"]?.target as? Commit)?.message, "Initial commit")
         XCTAssertEqual((repository["HEAD"]?.target as? Commit)?.note?.message, #"{"test": true }"#)
     }

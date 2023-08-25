@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "static-libgit2",
+        "repositoryURL": "https://github.com/bdewey/static-libgit2.git",
+        "state": {
+          "branch": null,
+          "revision": "ca2b13cb2cd04365c9416803c1d7e26116b23efd",
+          "version": "0.5.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

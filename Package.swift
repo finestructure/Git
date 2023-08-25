@@ -1,27 +1,21 @@
-// swift-tools-version:5.3
+// swift-tools-version:5.9
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
 
 let package = Package(
     name: "Git",
+    platforms: [.macOS(.v13)],
     products: [
-        // Products define the executables and libraries produced by a package, and make them visible to other packages.
-        .library(
-            name: "Git",
-            targets: ["Git"]),
+        .library(name: "Git", targets: ["Git"]),
     ],
     dependencies: [
-        // Dependencies declare other packages that this package depends on.
-        // .package(url: /* package url */, from: "1.0.0"),
+        .package(url: "https://github.com/bdewey/static-libgit2.git", from: "0.5.0"),
     ],
     targets: [
-        .systemLibrary(name: "Clibgit2", pkgConfig: "libgit2", providers: [
-            .brew(["libgit2"])
+        .target(name: "Git", dependencies: [
+            .product(name: "static-libgit2", package: "static-libgit2")
         ]),
-        .target(
-            name: "Git",
-            dependencies: ["Clibgit2"]),
         .testTarget(
             name: "GitTests",
             dependencies: ["Git"]),
